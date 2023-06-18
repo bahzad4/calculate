@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>calculate</title>
+  <link rel="stylesheet" href="file.css">
+  <script>
+    function b() {
+      x = parseInt(document.getElementById('x').value);
+      y = parseInt(document.getElementById('y').value);
+      op = document.getElementById('op').value;
+      if (op === '+') {
+        z = y + x;
+      }
+      else if (op === "*")
+        z = x * y;
+      else {
+
+        p = 1;
+        if (y == 0) {
+          z = 1;
+        }
+        else {
+
+          for (let i = 1; i <= y; i++) {
+            p *= x;
+            z = p;
+
+          }
+
+          for (let i = y * -1; i >= 1; i--) {
+            p /= x;
+            z = p;
+          }
+        }
+      }
+      document.getElementById('res').innerHTML = z;
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <input title="111111111111" placeholder="ژمارا١ داخلکە" type="number" name="" id="x"><br><br>
+    <input title="22222" placeholder="ژمارا ٢ داخلکە" type="number" name="" id="y"><br><br>
+     هەلبژێرە
+    <select name="" id="op">
+      <option value="+" class="+">+</option>
+      <option value="*" class="+">*</option>
+      <option value="pow" class="+">pow</option>
+    </select>
+    <br><br>
+    <input type="button" value="ئەنجامی ببینە" onclick="b()"><br>
+    <p id="res"></p>
+  </div>
+</body>
+
+
+
+<style>
+  div {
+    border: green solid 2px;
+    padding: 5%;
+    width: 25%;
+    margin: 0 auto;
+    background-color:red ;
+  }
+
+  input {
+    
+
+    height: 100px;
+    background-color: #f6dfdf;
+    text-align:right;
+    width: 100%;
+
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+    font-style: bold;
+    color: rgb(233, 181, 11);
+    background-color: rgb(185, 222, 255);
+  }
+  body{
+    background-color: red;
+  }
+</style>
+
+</html>
